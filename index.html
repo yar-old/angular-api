@@ -8,36 +8,26 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app="api-app">
     <div class="container">
-      <h1 class="page-header">Hello, Angular <small>meet JSON</small></h1>
+      <section id="intro" ng-controller="HelloController">
+        <h1 class="page-header">Hello, Angular <small>meet JSON</small></h1>
+        <p class="lead">Welcome {{ helloTo.title }} to the world of GW!</p>
+      </section>
 
-      <section id="users">
+      <section id="users" ng-controller="UserController as userCtrl">
         <div class="row">
-          <div class="col-md-3">
-            <div class="panel panel-default">
-
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="panel panel-default">
-
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="panel panel-default">
-
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="panel panel-default">
-              
+          <div class="col-md-3" ng-repeat="user in userCtrl.users">
+            <div class="panel panel-default user-card">
+              <img ng-src="" alt="">
+              <p class="lead text-center">{{ user.name }}</p>
             </div>
           </div>
         </div>
@@ -51,6 +41,7 @@
     <!-- Include Javascript Files After DOM Loads -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
