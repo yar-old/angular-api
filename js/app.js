@@ -10,12 +10,18 @@
     var userCtrl = this;
     userCtrl.users = [ ];
 
-    $http.get("http://jsonplaceholder.typicode.com/users")
-    .success(function(data, status, headers, config) {
-      userCtrl.users = data;
+    $http.get("http://api.randomuser.me/?nat=us,au,gb,ca&results=8")
+    .success(function(data) {
+      userCtrl.users = data.results;
     })
-    .error(function(data, status, headers, config) {
+    .error(function(data) {
       console.log("ERROR!");
     });
   }]);
+
+  app.filter('capitalize', function() {
+    return function(input) {
+      return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
 })();
