@@ -23,9 +23,11 @@
     var postCtrl = this;
     postCtrl.posts = [ ];
 
-    $http.get("http://jsonplaceholder.typicode.com/posts")
+    $http.get("http://jsonplaceholder.typicode.com/comments")
     .success(function(data) {
-      postCtrl.posts = data;
+      for (var i = 0; i < 6; ++i) {
+        postCtrl.posts.push(data[i]);
+      }
     })
     .error(function(data) {
       console.log("Error retrieving posts.");

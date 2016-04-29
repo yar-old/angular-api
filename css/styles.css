@@ -8,10 +8,10 @@ section {
 }
 
 .panel {
-  padding: 1em;
+  padding: 2em;
 }
 
-.user-card > .lead {
+.panel > .lead {
   margin-bottom: 5px;
 }
 
@@ -32,7 +32,39 @@ a {
   color: inherit;
 }
 
-a:hover {
+a:link, a:hover, a:active, a:visited {
   text-decoration: none;
   color: inherit;
+}
+
+
+#list-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#list-posts:nth-child(even) {
+  margin-right: none;
+}
+
+.post-card {
+  max-width: 49%;
+}
+
+/* Float */
+
+.hvr-float {
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
+  transform: translateY(-8px);
 }

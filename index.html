@@ -36,7 +36,7 @@
         <div class="row">
           <div class="col-md-3 col-sm-6" ng-repeat="user in userCtrl.users">
             <a href="#">
-              <div class="panel panel-default user-card animated fadeIn">
+              <div class="panel panel-default user-card animated fadeIn hvr-float">
                 <img ng-src="{{ user.picture.large }}" class="img-center" alt="">
                 <p class="lead text-center">{{ user.name.first | capitalize }} {{ user.name.last | capitalize }}</p>
                 <p class="text-center alternate">{{ user.email }}</p>
@@ -49,13 +49,12 @@
       <section id="posts" ng-controller="PostController as postCtrl">
         <p class="lead">Posts</p>
         <div class="row">
-          <div class="col-md-3 col-sm-6" ng-repeat="post in postCtrl.posts">
-            <a href="#">
-              <div class="panel panel-default post-card animated fadeIn">
-                <p class="lead text-center">{{ post. }}</p>
-                <p class="text-center alternate">{{ user.email }}</p>
-              </div>
-            </a>
+          <div id="list-posts" class="col-md-12">
+            <div class="panel panel-default post-card animated fadeIn" ng-repeat="post in postCtrl.posts">
+              <p class="lead">{{ post.name }}</p>
+              <p class="">{{ post.body }}</p>
+              <p class="alternate">- {{ post.email }}</p>
+            </div>
           </div>
         </div>
       </section>
