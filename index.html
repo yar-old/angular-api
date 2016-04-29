@@ -31,7 +31,7 @@
         </h1>
       </section>
 
-      <section class="" id="users" ng-controller="UserController as userCtrl">
+      <section id="users" ng-controller="UserController as userCtrl">
         <p class="lead">Users</p>
         <div class="row">
           <div class="col-md-3 col-sm-6" ng-repeat="user in userCtrl.users">
@@ -39,6 +39,20 @@
               <div class="panel panel-default user-card animated fadeIn">
                 <img ng-src="{{ user.picture.large }}" class="img-center" alt="">
                 <p class="lead text-center">{{ user.name.first | capitalize }} {{ user.name.last | capitalize }}</p>
+                <p class="text-center alternate">{{ user.email }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="posts" ng-controller="PostController as postCtrl">
+        <p class="lead">Posts</p>
+        <div class="row">
+          <div class="col-md-3 col-sm-6" ng-repeat="post in postCtrl.posts">
+            <a href="#">
+              <div class="panel panel-default post-card animated fadeIn">
+                <p class="lead text-center">{{ post. }}</p>
                 <p class="text-center alternate">{{ user.email }}</p>
               </div>
             </a>

@@ -15,7 +15,20 @@
       userCtrl.users = data.results;
     })
     .error(function(data) {
-      console.log("ERROR!");
+      console.log("Error retrieving users.");
+    });
+  }]);
+
+  app.controller("PostController", ['$http', function($http) {
+    var postCtrl = this;
+    postCtrl.posts = [ ];
+
+    $http.get("http://jsonplaceholder.typicode.com/posts")
+    .success(function(data) {
+      postCtrl.posts = data;
+    })
+    .error(function(data) {
+      console.log("Error retrieving posts.");
     });
   }]);
 
