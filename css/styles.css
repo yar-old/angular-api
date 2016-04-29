@@ -6,3 +6,11 @@ html, html a {
 .user-card {
   padding: 1em;
 }
+
+.user-card > .lead {
+  margin-bottom: 5px;
+}
+
+.alternate {
+  color: #707070;
+}
