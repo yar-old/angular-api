@@ -24,42 +24,20 @@
   </head>
 
   <body ng-app="api-app" ng-cloak>
-    <nav class="navbar" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">What is this?</a></li>
-
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
-
     <div class="container">
       <section id="intro" ng-controller="HelloController">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 class="pull-left" id="header">
-              Hello, Angular <small>meet JSON</small>
-            </h1>
-          </div>
-        </div>
+        <h1 class="text-center" id="header">
+          Hello, Angular <small>meet JSON</small>
+        </h1>
       </section>
 
       <section id="users" ng-controller="UserController as userCtrl">
-        <p class="lead">Users</p>
+        <p class="lead title">
+          Users
+          <input class="search-box pull-right" type="text" ng-model="search" placeholder="Search users">
+        </p>
         <div class="row">
-          <div class="col-md-3 col-sm-6" ng-repeat="user in userCtrl.users">
+          <div class="col-md-3 col-sm-6" ng-repeat="user in userCtrl.users | filter:search">
             <a href="#">
               <div class="panel panel-default user-card animated fadeIn hvr-float">
                 <img ng-src="{{ user.picture.large }}" class="img-center" alt="">

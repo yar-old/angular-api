@@ -15,6 +15,16 @@ section {
   margin-bottom: 1em;
 }
 
+.search-box {
+  padding: 5px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+#users p.title {
+  margin-bottom: 2em;
+}
+
 .panel {
   padding: 2em;
 }
