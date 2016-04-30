@@ -3,6 +3,14 @@ html, html a {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
+#navbar > ul > li {
+  margin-right: 1em;
+}
+
+.navbar .icon-bar {
+  border: 1px solid #303030;
+}
+
 section {
   margin-bottom: 1em;
 }
@@ -49,7 +57,13 @@ a:link, a:hover, a:active, a:visited {
 }
 
 .post-card {
-  max-width: 49%;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .post-card {
+    max-width: 49%;
+  }
 }
 
 /* Float */
